@@ -1,37 +1,66 @@
 
-/*General styles*/
-:root{
-    --fuente-principal:monospace;
+/* General styles */
+:root {
+    --fuente-principal: 'Courier New', monospace; /* Una fuente más "bit" queda mejor */
+    --rojo-crt: rgba(254, 2, 60, 0.8);
+    --brillo-rojo: 0 0 15px rgba(254, 2, 60, 0.5);
 }
-body{
+
+body {
     background-image: url('https://i.ibb.co/CpF3ypxD/descarga.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
-main{
-    font-family: var(--fuente-principal)!important;
-    background-color: #0d0d0d;
-    border: 2px solid #d0d1d9;
-    border-radius: 10px;
+
+main {
+    font-family: var(--fuente-principal) !important;
+    background-color: #0d0d0d !important;
+    border: 2px solid #d0d1d9 !important;
+    border-radius: 10px !important;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 0 30px rgb(254, 2, 60,0.3);
+    box-shadow: 0 0 30px rgba(254, 2, 60, 0.4);
+    width: 80% !important; /* Añadí !important para asegurar el ancho */
+    padding: 20px;
 }
-main::before{
+
+/* Efecto de Pantalla CRT Mejorado */
+main::before {
     content: "";
     display: block;
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(rgba(18,16,16,0) 50%, rgba(0,0,0,0.25) 50%), 
-    linear-gradient(90deg, rgba(255,0,0,0.6), rgba(0,255,0,0.2), rgba(0,0,255,0.6));
-    z-index: 2;
-    background-size: 100% 4px, 3px, 100%;
+    /* Ajustamos la opacidad para que se vea lo de abajo */
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+    z-index: 10; /* Subimos el z-index */
+    background-size: 100% 3px, 3px 100%; /* Corregido el tamaño */
     pointer-events: none;
+    opacity: 0.6;
 }
-nav{
-    margin: 10%;
+
+/* 3. ¡IMPORTANTE! Para que el texto sea rojo y brille */
+main h1, main h2, main h3, main h4, main p, main a, main label {
+    color: #fe023c !important;
+    text-shadow: var(--brillo-rojo);
 }
-footer{
-    margin-bottom: 40%;
+
+/* Quitar fondos blancos de las tablas internas de SpaceHey */
+.table-section, .inner, .heading {
+    background: transparent !important;
+    border: 1px solid rgba(208, 209, 217, 0.3) !important;
+    color: #fe023c !important;
+}
+
+nav {
+    margin-top: 5%;
+    margin-bottom: 2%;
+    background: rgba(13, 13, 13, 0.8) !important;
+    border: 1px solid #d0d1d9 !important;
+}
+
+footer {
+    margin-bottom: 5%;
+    color: white !important;
 }
