@@ -1,6 +1,17 @@
+
+/*General styles*/
+:root{
+    --fuente-principal:"Monotype"
+}
 body{
     background-image: url('https://i.ibb.co/CpF3ypxD/descarga.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+}
+nav{
+    margin-top: 10%;
+}
+footer{
+    margin-bottom: 10%;
 }
