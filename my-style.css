@@ -1,7 +1,7 @@
 
 /*General styles*/
 :root{
-    --fuente-principal:"Monotype"
+    --fuente-principal:monospace;
 }
 body{
     background-image: url('https://i.ibb.co/CpF3ypxD/descarga.jpg');
@@ -9,9 +9,28 @@ body{
     background-position: center;
     background-attachment: fixed;
 }
+main{
+    font-family: var(--fuente-principal)!important;
+    background-color: #0d0d0d;
+    border: 2px solid #d0d1d9;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgb(254, 2, 60,0.3);
+}
+main::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(rgba(18,16,16,0) 50%, rgba(0,0,0,0.25) 50%), 
+    linear-gradient(90deg, rgba(255,0,0,0.6), rgba(0,255,0,0.2), rgba(0,0,255,0.6));
+    z-index: 2;
+    background-size: 100% 4px, 3px, 100%;
+    pointer-events: none;
+}
 nav{
     margin: 10%;
-    font-family: var(--fuente-principal)!important;
 }
 footer{
     margin-bottom: 40%;
