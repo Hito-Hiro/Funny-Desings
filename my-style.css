@@ -10,8 +10,9 @@ body{
     background-attachment: fixed;
 }
 nav{
-    margin-top: 10%;
+    margin: 10%;
+    font-family: var(--fuente-principal)!important;
 }
 footer{
-    margin-bottom: 10%;
+    margin-bottom: 40%;
 }
